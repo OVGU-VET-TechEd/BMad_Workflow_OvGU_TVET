@@ -475,7 +475,8 @@ my-lecture-project/
 ├── .bmad-core/
 │   └── agents/
 │       └── teaching-agent.md
-└── copilot-instructions.md
+└── .github/
+    └── copilot-instructions.md
 ```
 
 ### 2.3 Creating Template Files
@@ -811,7 +812,7 @@ and slide structure (see `data/liascript-cheat-sheet.md`).
 - STAY IN CHARACTER!
 ```
 
-### 2.5 Setting Up the Copilot Instructions File
+### 2.5 Setting Up the Copilot Instructions File under .github/
 
     --{{0}}--
 The copilot-instructions.md file tells your AI assistant how to behave as the Teaching Agent.
@@ -819,7 +820,7 @@ The copilot-instructions.md file tells your AI assistant how to behave as the Te
       {{0}}
 **File: `copilot-instructions.md`**
 
-Create this file in your project root with the Teaching Agent definition:
+Create this file in your project root (.github/) with the Teaching Agent definition:
 
 ```markdown
 # Teaching-Agent Instructions
@@ -872,15 +873,54 @@ Let's walk through creating a complete lecture using the workflow.
       {{0}}
 **Step 1: Create Lecture Outline**
 
-In VS Code, open Copilot Chat and use command:
+Create your project content or choose from the following examples:
 
+********************************************************************************
+
+**Option A: Python Script**
+
+Download as `.py` file to run as Python script:
+
+[Workflow_Guide_BMad_setup_V2.py](https://github.com/OVGU-VET-TechEd/BMad_Workflow_OvGU_TVET/blob/main/Workflow_Guide_BMad_setup_V2.py)
+
+**Option B: ZIP Archive**
+
+Download as `.zip` file to be extracted:
+
+[teaching-workflow-files-20260108.zip](https://github.com/OVGU-VET-TechEd/BMad_Workflow_OvGU_TVET/blob/main/teaching-workflow-files-20260108.zip)
+
+********************************************************************************
+
+
+**Setup in VS Code:**
+
+1. Open the directory where your project is situated
+   - Via menu: **File → Open Folder**
+   - Via terminal: `code /path/to/project`
+
+
+**Initiate the Teaching Agent:**
+
+In the Copilot Chat, choose Agent and your model, then use:
+```bash
+@teaching-agent /help
 ```
-/create-outline
 
+
+The Agent will prompt you to start and suggest:
+```bash
+/create-outline
+```
+
+********************************************************************************
+
+**Example Response:**
+```markdown
 Title: Introduction to Machine Learning
 Audience: Computer Science undergraduates, 3rd semester
 Time: 14 weeks, 2 hours/week lecture + 2 hours/week exercise
 Abstract: This course introduces fundamental concepts of machine learning...
+
 Learning Objectives:
 1. Understand supervised vs unsupervised learning
 2. Implement basic ML algorithms from scratch
@@ -890,6 +930,8 @@ Learning Objectives:
 ```
 
 The agent will create `docs/lecture-outline.md` with structured content.
+
+********************************************************************************
 
       {{1}}
 **Step 2: Define Didactics**
